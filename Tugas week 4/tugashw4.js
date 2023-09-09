@@ -1,21 +1,18 @@
 // Array bilangan 100
 const nialiarray = [];
-for (let i = 0; i < 50 * 2; i++) {
-  let i = Math.random() * 2;
-  nialiarray.push(i);
-  console.log(i);
-}
-
-// Array bilangan genap 
 const arrayGenap = [];
-for (let i = 2; i <= 100; i += 2) {
-  arrayGenap.push(i);
-}
-
-// Array bilangan ganjil 
 const arrayGanjil = [];
-for (let i = 1; i <= 99; i += 2) {
-  arrayGanjil.push(i);
+const arrayAcak = [];
+
+for (let i = 0; i < 100; i++) {
+  const nilaiAcak = Math.floor(Math.random() * 100) + 1; 
+  arrayAcak.push(nilaiAcak);
+
+  if (nilaiAcak % 2 === 0) {
+    arrayGenap.push(nilaiAcak);
+  } else {
+    arrayGanjil.push(nilaiAcak);
+  }
 }
 
 // Menghitung nilai minimum
@@ -75,6 +72,15 @@ function hitungperbandingan(arr) {
   return { min, max, total, rataRata };
 }
 
+// Hasil Array acak,genap, dan ganjil
+console.log("Array Acak:");
+console.log(arrayAcak);
+
+console.log("\nArray Bilangan Genap:");
+console.log(arrayGenap);
+
+console.log("\nArray Bilangan Ganjil:");
+console.log(arrayGanjil);
 
 // Menghitung min,max,total,dan rata-rata dari array genap dan ganjil
 const minGenap = hitungMin(arrayGenap);
